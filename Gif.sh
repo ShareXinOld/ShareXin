@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # take a screenshot using gnome-screenshot
-image=$(mktemp /tmp/twitter_XXXXXX.gif)
+image=$(mktemp /tmp/twitter_XXXXXXX.gif)
+gtk-recordmydesktop
+
 ffmpeg -i ~/out.ogv $image
 
 cp $image ~/Pictures/Screenshots/
