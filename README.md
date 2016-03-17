@@ -2,9 +2,9 @@
 Python cli script for ShareX on Linux
 
 #### Requirements
-Python3
-Shutter
-[Twitter](https://github.com/sixohsix/twitter)
+Python3  
+Shutter  
+[Twitter](https://github.com/sixohsix/twitter)  
 Xterm
 
 #### How to use
