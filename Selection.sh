@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # take a screenshot using gnome-screenshot
-image=$(mktemp /tmp/twitter_clip.XXXXXX.png)
+image=$(mktemp /tmp/twitter_clip_XXXXXX.png)
 shutter -s --output="$image" -n -e 
 
 cp $image ~/Pictures/Screenshots/
