@@ -1,7 +1,3 @@
-from twitter import *
+#!/bin/bash
 
-tweet = input('Message: ')
-
-t = Twitter(auth=OAuth("token", "token_secret", "consumer_key", "consumer_key_secret"))
-
-t.statuses.update(status=tweet)
+xterm -e "python3 /home/thebitstick/Twitter/Tweet.py"
