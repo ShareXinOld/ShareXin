@@ -4,7 +4,7 @@
 image=$(mktemp /tmp/twitter_XXXXXXX.gif)
 gtk-recordmydesktop
 
-ffmpeg -i ~/out.ogv $image
+xterm -e "ffmpeg -i ~/out.ogv $image"
 
 cp $image ~/Pictures/Screenshots/
 
