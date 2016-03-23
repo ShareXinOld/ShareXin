@@ -4,7 +4,7 @@
 image=$(mktemp /tmp/twitter_XXXXXXX.gif)
 gtk-recordmydesktop
 
-date=$(date +%m-%d-%y)
+date=$(date +%Y-%m-%d)
 time=$(date +%T)
 
 xterm -e "ffmpeg -i ~/out.ogv $image"

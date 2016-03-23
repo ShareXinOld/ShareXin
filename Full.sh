@@ -4,7 +4,7 @@
 image=$(mktemp /tmp/twitter_XXXXXX.png)
 shutter -f --output="$image" -n -e
 
-date=$(date +%m-%d-%y)
+date=$(date +%Y-%m-%d)
 time=$(date +%T)
 
 cp $image ~/Pictures/Screenshots/twitter-$date-$time.png
