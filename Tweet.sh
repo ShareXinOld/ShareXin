@@ -1,3 +1,3 @@
 #!/bin/bash
 
-xterm -e "python3 ~/ShareXin/Tweet.py"
+xterm -e "python3 /home/thebitstick/Twitter/Tweet.py"
