@@ -6,7 +6,7 @@ XDG_PICTURES_DIR="${XDG_PICTURES_DIR:-~/Pictures}"
 image=$(mktemp /tmp/twitter_clip_XXX.png)
 maim -s $image
 
-date=$(date +%m-%d-%y)
+date=$(date +%Y-%m-%d)
 time=$(date +%T)
 
 cp $image $XDG_PICTURES_DIR/sharexin/twitter_clip-$date-$time.png

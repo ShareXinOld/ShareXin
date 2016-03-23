@@ -1,11 +1,11 @@
 # ShareXin
 
 #### Requirements
-Python3  
-Shutter  
+python3  
+maim
 [Twitter](https://github.com/sixohsix/twitter)  
-Xterm  
-FFMpeg  
+a terminal emulator
+ffmpeg
 gtk-recordmydesktop  
 
 
