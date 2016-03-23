@@ -16,5 +16,5 @@ export image
 # check file size (0 bytes means that gnome-screenshot was cancelled)
 sharenixtmpsize=$(wc -c <"$image")
 if [ $sharenixtmpsize != 0 ]; then
-    $(basename $0)/term.sh -e "python3 $(basename $0)/Twitter.py"
+    term.sh -e "python3 Twitter.py"
 fi
