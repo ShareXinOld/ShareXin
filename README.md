@@ -1,5 +1,4 @@
 # ShareXin
-Python cli script for ShareX on Linux
 
 #### Requirements
 Python3  
@@ -13,7 +12,8 @@ gtk-recordmydesktop
 #### How to use
 1. git clone
 2. add keyboard shortcuts
-3. Done
+3. Add in Twitter App details into `config.py`
+4. Done
 
 #### Troubleshooting
 ### The same gif is converted everytime
