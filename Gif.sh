@@ -1,6 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 
-# take a screenshot using gnome-screenshot
+XDG_PICTURES_DIR="${XDG_PICTURES_DIR:-~/Pictures}"
+
+# take a recording using gtk-recordmydesktop
 image=$(mktemp /tmp/twitter_XXXXXXX.gif)
 gtk-recordmydesktop
 
@@ -9,12 +11,12 @@ time=$(date +%T)
 
 xterm -e "ffmpeg -i ~/out.ogv $image"
 
-cp $image ~/Pictures/Screenshots/twitter-$date-$time.gif
+cp $image "${XDG_PICTURES_DIR}/sharexin/twitter-$date-$time.gif"
 
 export image
 
 # check file size (0 bytes means that gnome-screenshot was cancelled)
 sharenixtmpsize=$(wc -c <"$image")
 if [ $sharenixtmpsize != 0 ]; then
-    xterm -e "python3 /home/thebitstick/Twitter/Gif.py"
+    "$(basename $0)"/term.sh -e "python3 $(basename $0)/Gif.py"
 fi
