@@ -1,20 +1,17 @@
 #!/bin/sh
 
+# pictures directory
 XDG_PICTURES_DIR="${XDG_PICTURES_DIR:-$HOME/Pictures}"
 
 # take a screenshot using maim
-image=$(mktemp /tmp/twitter_clip_XXX.png)
-maim -s $image
+maim -s /tmp/sharexin_img.png
 
+# date and time for naming
 date=$(date +%Y-%m-%d)
 time=$(date +%T)
 
-cp $image $XDG_PICTURES_DIR/sharexin/twitter_clip-$date-$time.png
+# copies to permanent location
+cp /tmp/sharexin_img.png $XDG_PICTURES_DIR/sharexin/twitter_clip-$date-$time.png
 
-export image
-
-# check file size (0 bytes means that gnome-screenshot was cancelled)
-sharenixtmpsize=$(wc -c <"$image")
-if [ $sharenixtmpsize != 0 ]; then
-    ./term.sh -e "python3 Selection.py"
-fi
+# launches python script
+./term.sh -e "python3 Selection.py"

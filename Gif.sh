@@ -1,22 +1,20 @@
 #!/bin/sh
 
+# pictures directory
 XDG_PICTURES_DIR="${XDG_PICTURES_DIR:-$HOME/Pictures}"
 
 # take a recording using gtk-recordmydesktop
-image=$(mktemp /tmp/twitter_XXXXXXX.gif)
 gtk-recordmydesktop
 
+# date and time for naming
 date=$(date +%Y-%m-%d)
 time=$(date +%T)
 
-term.sh -e "ffmpeg -i ~/out.ogv $image"
+# ogv to gif conversion
+./term.sh -e "ffmpeg -i ~/out.ogv /tmp/sharexin_gif.gif -y"
 
-cp $image "${XDG_PICTURES_DIR}/sharexin/twitter-$date-$time.gif"
+# copies gif to permanent location
+cp /tmp/sharexin_gif.gif "${XDG_PICTURES_DIR}/sharexin/twitter-$date-$time.gif"
 
-export image
-
-# check file size (0 bytes means that gnome-screenshot was cancelled)
-sharenixtmpsize=$(wc -c <"$image")
-if [ $sharenixtmpsize != 0 ]; then
-    ./term.sh -e "python3 Gif.py"
-fi
+# launches python script
+./term.sh -e "python3 Gif.py"
