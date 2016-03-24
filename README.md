@@ -1,14 +1,14 @@
 # ShareXin
 
 #### Requirements
-python3
-xdotool
-[maim](https://github.com/naelstrof/maim)
-[slop](https://github.com/naelstrof/slop)
+python3  
+xdotool  
+[maim](https://github.com/naelstrof/maim)  
+[slop](https://github.com/naelstrof/slop)  
 [Twitter](https://github.com/sixohsix/twitter)  
-a terminal emulator
-ffmpeg
-gtk-recordmydesktop
+a terminal emulator  
+ffmpeg  
+gtk-recordmydesktop  
 
 
 #### How to use
