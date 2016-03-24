@@ -4,7 +4,7 @@ import os
 import config
 
 tweet = input('Message: ')
-image = os.environ["image"]
+image = "/tmp/sharexin_gif.gif"
 print(image)
 
 t = Twitter(auth=OAuth(config.access, config.access_secret, config.api, config.api_secret))
