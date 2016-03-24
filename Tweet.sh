@@ -1,3 +1,3 @@
-#!/bin/bash
+#!/bin/sh
 
-xterm -e "python3 /home/thebitstick/Twitter/Tweet.py"
+./term.sh -e "python3 Tweet.py"
