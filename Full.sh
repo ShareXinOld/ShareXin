@@ -14,4 +14,4 @@ time=$(date +%T)
 cp /tmp/sharexin_img.png $XDG_PICTURES_DIR/sharexin/twitter-$date-$time.png
 
 # launches python script
-./term.sh -e "python3 Full.py"
+xfce4-terminal -e "python3 /home/thebitstick/ShareXin/Full.py"

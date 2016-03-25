@@ -1,3 +1,3 @@
 #!/bin/sh
 
-./term.sh -e "python3 Tweet.py"
+xfce4-terminal -e "python3 /home/thebitstick/ShareXin/Tweet.py"

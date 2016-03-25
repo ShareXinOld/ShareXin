@@ -1,9 +1,11 @@
 from twitter import *
 import os
+import sys
 
 import config
 
-tweet = input('Message: ')
+print('Type message: (Ctrl+D to "enter" message)')
+tweet = sys.stdin.read()
 image = "/tmp/sharexin_gif.gif"
 print(image)
 

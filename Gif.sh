@@ -11,10 +11,10 @@ date=$(date +%Y-%m-%d)
 time=$(date +%T)
 
 # ogv to gif conversion
-./term.sh -e "ffmpeg -i ~/out.ogv /tmp/sharexin_gif.gif -y"
+xfce4-terminal -e "ffmpeg -i /home/thebitstick/out.ogv /tmp/sharexin_gif.gif -y"
 
 # copies gif to permanent location
 cp /tmp/sharexin_gif.gif "${XDG_PICTURES_DIR}/sharexin/twitter-$date-$time.gif"
 
 # launches python script
-./term.sh -e "python3 Gif.py"
+xfce4-terminal -e "python3 /home/thebitstick/ShareXin/Gif.py"

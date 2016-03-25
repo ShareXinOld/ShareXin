@@ -6,7 +6,7 @@ xdotool
 [maim](https://github.com/naelstrof/maim)  
 [slop](https://github.com/naelstrof/slop)  
 [Twitter](https://github.com/sixohsix/twitter)  
-a terminal emulator  
+xfce4-terminal (unless you replace it in the script)  
 ffmpeg  
 gtk-recordmydesktop  
 
@@ -15,7 +15,7 @@ gtk-recordmydesktop
 1. git clone
 2. add keyboard shortcuts
 3. Add in Twitter App details into `config.py`
-4. Done
+4. Replace locations in shell scripts with YOUR locations
 
 #### Troubleshooting
 
