@@ -14,7 +14,7 @@ eval $(slop --opengl)
 xfce4-terminal -e "ffmpeg -f x11grab -s "$W"x"$H" -i :0.0+$X,$Y -f alsa -i pulse /tmp/sharexin_gif.gif"
 
 # copies gif to permanent location
-cp /tmp/sharexin_gif.gif "${XDG_PICTURES_DIR}/sharexin/twitter-$date-$time.gif"
+cp /tmp/sharexin_gif.gif "${XDG_PICTURES_DIR}/ShareXin/twitter-$date-$time.gif"
 
 # launches python script
-xfce4-terminal -e "python3 /home/thebitstick/ShareXin/Gif.py"
+python3 ~/ShareXin/Gif.py
