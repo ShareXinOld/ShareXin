@@ -6,7 +6,7 @@ xdotool
 [maim](https://github.com/naelstrof/maim)  
 [slop](https://github.com/naelstrof/slop)  
 [Twitter](https://github.com/sixohsix/twitter)  
-xfce4-terminal (unless you replace it in the script)  
+PyQt  
 ffmpeg  
 gtk-recordmydesktop  
 
