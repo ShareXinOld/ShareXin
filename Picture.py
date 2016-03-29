@@ -29,12 +29,16 @@ class Example(QtGui.QWidget):
         self.setLayout(grid)
         
         self.setGeometry(480, 280, 350, 240)
-        self.setWindowTitle('Tweet message')    
+        self.setWindowTitle('Tweet image w/ message')    
         self.show()
     def tweet(self):
         tweet = self.tweetEdit.toPlainText()
+        image = "/tmp/sharexin_img.png"
         t = Twitter(auth=OAuth(config.access, config.access_secret, config.api, config.api_secret))
-        t.statuses.update(status=tweet)
+        with open(image, "rb") as imagefile: imagedata = imagefile.read()
+        t_up = Twitter(domain='upload.twitter.com', auth=OAuth(config.access, config.access_secret, config.api, config.api_secret))
+        id_img1 = t_up.media.upload(media=imagedata)["media_id_string"]
+        t.statuses.update(status=tweet, media_ids=",".join([id_img1]))
         exit()
         
 def main():

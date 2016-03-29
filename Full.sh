@@ -11,7 +11,7 @@ date=$(date +%Y-%m-%d)
 time=$(date +%T)
 
 # copies tmo file to permanent location
-cp /tmp/sharexin_img.png $XDG_PICTURES_DIR/sharexin/twitter-$date-$time.png
+cp /tmp/sharexin_img.png $XDG_PICTURES_DIR/ShareXin/twitter-$date-$time.png
 
 # launches python script
-xfce4-terminal -e "python3 /home/thebitstick/ShareXin/Full.py"
+python3 ~/ShareXin/Picture.py
