@@ -4,8 +4,8 @@
 python3  
 [Twitter](https://github.com/sixohsix/twitter)  
 PyQt  
-gnome-screenshot
-X11 or Wayland
+gnome-screenshot  
+X11 or Wayland  
 
 #### How to use
 1. git clone
