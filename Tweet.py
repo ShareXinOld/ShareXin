@@ -1,6 +1,8 @@
+#!/usr/bin/env python3
 import sys
 from PyQt4 import QtGui, QtCore
 from twitter import *
+from gi.repository import Notify
 
 import config
 
@@ -32,9 +34,13 @@ class Example(QtGui.QWidget):
         self.setWindowTitle('Tweet message')    
         self.show()
     def tweet(self):
+        self.close()
         tweet = self.tweetEdit.toPlainText()
         t = Twitter(auth=OAuth(config.access, config.access_secret, config.api, config.api_secret))
         t.statuses.update(status=tweet)
+        Notify.init('Sent to twitter')
+        Sent = Notify.Notification.new('')
+        Sent.show()
         exit()
         
 def main():

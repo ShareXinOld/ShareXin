@@ -1,6 +1,7 @@
 import sys
 from PyQt4 import QtGui, QtCore
 from twitter import *
+from gi.repository import Notify
 
 import config
 
@@ -32,6 +33,7 @@ class Example(QtGui.QWidget):
         self.setWindowTitle('Tweet image w/ message')    
         self.show()
     def tweet(self):
+        self.close()
         tweet = self.tweetEdit.toPlainText()
         image = "/tmp/sharexin_img.png"
         t = Twitter(auth=OAuth(config.access, config.access_secret, config.api, config.api_secret))
@@ -39,6 +41,9 @@ class Example(QtGui.QWidget):
         t_up = Twitter(domain='upload.twitter.com', auth=OAuth(config.access, config.access_secret, config.api, config.api_secret))
         id_img1 = t_up.media.upload(media=imagedata)["media_id_string"]
         t.statuses.update(status=tweet, media_ids=",".join([id_img1]))
+        Notify.init('Success')
+        sent = Notify.Notification.new('Success', 'Tweet sent', '/tmp/sharexin_img.png')
+        sent.show()
         exit()
         
 def main():
