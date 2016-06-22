@@ -1,4 +1,0 @@
-access = ""
-access_secret = ""
-api = ""
-api_secret = ""

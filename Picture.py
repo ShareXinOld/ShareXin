@@ -1,26 +1,38 @@
+#!/usr/bin/env python3
 import sys
-from PyQt4 import QtGui, QtCore
+from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtGui import QIcon
+import PyQt5
+from PyQt5 import *
 from twitter import *
 from gi.repository import Notify
+import time
+import configparser
 
-import config
+config = configparser.ConfigParser()
+config.read('/home/<<your username>>/ShareXin/config.ini')
+keys = config['Twitter']
+access = keys['access']
+access_secret = keys['access_secret']
+api = keys['api']
+api_secret = keys['api_secret']
 
-class Example(QtGui.QWidget):
+class Example(QWidget):
     
     def __init__(self):
-        super(Example, self).__init__()
+        super().__init__()
         
         self.initUI()
         
     def initUI(self):
 
-        self.tweetEdit = QtGui.QTextEdit()
-        cancel = QtGui.QPushButton('Cancel')
-        tweet = QtGui.QPushButton('Tweet')
+        self.tweetEdit = QtWidgets.QTextEdit()
+        cancel = QtWidgets.QPushButton('Cancel')
+        tweet = QtWidgets.QPushButton('Tweet')
         cancel.clicked.connect(QtCore.QCoreApplication.instance().quit)
         tweet.clicked.connect(self.tweet)
 
-        grid = QtGui.QGridLayout()
+        grid = QtWidgets.QGridLayout()
         grid.setSpacing(10)
 
         grid.addWidget(self.tweetEdit, 0, 0)
@@ -36,22 +48,18 @@ class Example(QtGui.QWidget):
         self.close()
         tweet = self.tweetEdit.toPlainText()
         image = "/tmp/sharexin_img.png"
-        t = Twitter(auth=OAuth(config.access, config.access_secret, config.api, config.api_secret))
+        t = Twitter(auth=OAuth(access, access_secret, api, api_secret))
         with open(image, "rb") as imagefile: imagedata = imagefile.read()
-        t_up = Twitter(domain='upload.twitter.com', auth=OAuth(config.access, config.access_secret, config.api, config.api_secret))
+        t_up = Twitter(domain='upload.twitter.com', auth=OAuth(access, access_secret, api, api_secret))
         id_img1 = t_up.media.upload(media=imagedata)["media_id_string"]
         t.statuses.update(status=tweet, media_ids=",".join([id_img1]))
-        Notify.init('Success')
-        sent = Notify.Notification.new('Success', 'Tweet sent', '/tmp/sharexin_img.png')
-        sent.show()
-        exit()
+        Notify.init('ShareXin')
+        Sent = Notify.Notification.new('Success', 'Sent to Twitter', '/tmp/sharexin_img.png')
+        Sent.show()
+        time.sleep(2)
+        Sent.close()
         
-def main():
-    
-    app = QtGui.QApplication(sys.argv)
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
     ex = Example()
     sys.exit(app.exec_())
-
-
-if __name__ == '__main__':
-    main()

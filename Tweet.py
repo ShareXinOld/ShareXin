@@ -1,27 +1,38 @@
 #!/usr/bin/env python3
 import sys
-from PyQt4 import QtGui, QtCore
+from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtGui import QIcon
+import PyQt5
+from PyQt5 import *
 from twitter import *
 from gi.repository import Notify
+import time
+import configparser
 
-import config
+config = configparser.ConfigParser()
+config.read('/home/<<your username>>/ShareXin/config.ini')
+keys = config['Twitter']
+access = keys['access']
+access_secret = keys['access_secret']
+api = keys['api']
+api_secret = keys['api_secret']
 
-class Example(QtGui.QWidget):
+class Example(QWidget):
     
     def __init__(self):
-        super(Example, self).__init__()
+        super().__init__()
         
         self.initUI()
         
     def initUI(self):
 
-        self.tweetEdit = QtGui.QTextEdit()
-        cancel = QtGui.QPushButton('Cancel')
-        tweet = QtGui.QPushButton('Tweet')
+        self.tweetEdit = QtWidgets.QTextEdit()
+        cancel = QtWidgets.QPushButton('Cancel')
+        tweet = QtWidgets.QPushButton('Tweet')
         cancel.clicked.connect(QtCore.QCoreApplication.instance().quit)
         tweet.clicked.connect(self.tweet)
 
-        grid = QtGui.QGridLayout()
+        grid = QtWidgets.QGridLayout()
         grid.setSpacing(10)
 
         grid.addWidget(self.tweetEdit, 0, 0)
@@ -36,19 +47,15 @@ class Example(QtGui.QWidget):
     def tweet(self):
         self.close()
         tweet = self.tweetEdit.toPlainText()
-        t = Twitter(auth=OAuth(config.access, config.access_secret, config.api, config.api_secret))
+        t = Twitter(auth=OAuth(access, access_secret, api, api_secret))
         t.statuses.update(status=tweet)
-        Notify.init('Sent to twitter')
-        Sent = Notify.Notification.new('')
+        Notify.init('ShareXin')
+        Sent = Notify.Notification.new('Sent to Twitter')
         Sent.show()
-        exit()
+        time.sleep(2)
+        Sent.close()
         
-def main():
-    
-    app = QtGui.QApplication(sys.argv)
-    ex = Example()
-    sys.exit(app.exec_())
-
-
 if __name__ == '__main__':
-    main()
+    app = QApplication(sys.argv)
+    ex = Example()
+    sys.exit(app.exec_()) 
