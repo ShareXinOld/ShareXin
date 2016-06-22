@@ -20,7 +20,7 @@ gnome-screenshot
 5. Done!
 
 ### Changelog
-#### [0.5.6] - 2016-06-22
+#### [0.5.7] - 2016-06-22
 #### Added
 - Changelog
 - Proper configuration file
