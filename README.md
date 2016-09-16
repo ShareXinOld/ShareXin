@@ -20,6 +20,11 @@ gnome-screenshot
 5. Done!
 
 ### Changelog
+#### [0.6.4] - 2016-09-15
+#### Added
+- Fixed syntax in scripts
+- Removed useless if/else since Gnome-Screenshot doesn't give exit codes
+
 #### [0.5.7] - 2016-06-22
 #### Added
 - Changelog
