@@ -6,7 +6,7 @@ XDG_PICTURES_DIR="${XDG_PICTURES_DIR:-$HOME/Pictures}"
 # take a screenshot using gnome-screenshot
 gnome-screenshot -f /tmp/sharexin_img.png
 
-  python3 ~/ShareXin/Picture.py
+python3 ~/ShareXin/Picture.py
 
 # date and time for naming
 date=$(date +%Y-%m-%d)
