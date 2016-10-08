@@ -26,6 +26,10 @@ gnome-screenshot (on Linux)
 5. Done!
 
 ### Changelog
+#### [0.7.3] - 2016-10-08
+#### Added
+- Better configuration, similar to ShareJin's config
+- Requirements.txt
 #### [0.6.4] - 2016-09-15
 #### Added
 - Fixed syntax in scripts
