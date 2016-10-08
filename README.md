@@ -1,7 +1,10 @@
 # ShareXin  
 
 On Windows
-![On Windows](https://raw.githubusercontent.com/ShareXin/ShareXin/master/twitter-2016-10-08-05_48_543_PM.png)
+![On Windows](https://raw.githubusercontent.com/ShareXin/ShareXin/master/twitter-2016-10-08-05_48_543_PM.png)  
+
+On Linux
+![On Linux](https://raw.githubusercontent.com/ShareXin/ShareXin/master/twitter-2016-10-08-10_07_602_PM.png)
 
 #### Requirements
 python3  
