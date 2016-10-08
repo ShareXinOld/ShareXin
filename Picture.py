@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import sys
+import os
 from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5.QtGui import QIcon
 import PyQt5
@@ -10,7 +11,7 @@ import time
 import configparser
 
 config = configparser.ConfigParser()
-config.read('/home/<<your username>>/ShareXin/config.ini')
+config.read(os.path.expanduser("~")  + '/.config/ShareXin/config.ini')
 keys = config['Twitter']
 access = keys['access']
 access_secret = keys['access_secret']
