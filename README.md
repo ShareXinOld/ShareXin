@@ -10,7 +10,7 @@ On Linux
 python3  
 [Twitter](https://github.com/sixohsix/twitter)  
 PyQt5  
-gnome-screenshot  
+gnome-screenshot (on Linux)  
 
 #### Features
 * Uploads to Twitter
@@ -20,8 +20,8 @@ gnome-screenshot
 
 #### Installation
 1. `git clone https://github.com/ShareXin/ShareXin`
-2. Add your username to `Picture.py` and `Tweet.py`
-3. Add your Twitter App details into `config.ini`
+2. Add your Twitter App details into `config.ini`
+3. Place `config.ini` to `~/.config/ShareXin/`
 4. Attach the scripts to a keyboard shortcut
 5. Done!
 
