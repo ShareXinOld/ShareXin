@@ -19,4 +19,6 @@ date=$(date +%Y-%m-%d)
 time=$(date +%T)
 
 # copies to permanent location
+mkdir $XDG_PICTURES_DIR/ShareXin
+mkdir $XDG_PICTURES_DIR/ShareXin/Clip
 cp /tmp/sharexin_img.png $XDG_PICTURES_DIR/ShareXin/Clip/twitter_clip-$date-$time.png

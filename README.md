@@ -27,6 +27,10 @@ feh (for Selection)
 5. Done!
 
 ### Changelog
+#### [0.7.5] - 2017-07-10
+#### Added
+- Automatic image folder creation
+
 #### [0.7.4] - 2017-07-10
 #### Added
 - Better notification

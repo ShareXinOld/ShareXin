@@ -13,4 +13,6 @@ date=$(date +%Y-%m-%d)
 time=$(date +%T)
 
 # copies tmo file to permanent location
+mkdir $XDG_PICTURES_DIR/ShareXin
+mkdir $XDG_PICTURES_DIR/ShareXin/Full
 cp /tmp/sharexin_img.png $XDG_PICTURES_DIR/ShareXin/Full/twitter-$date-$time.png
