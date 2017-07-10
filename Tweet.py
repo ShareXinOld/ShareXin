@@ -51,7 +51,7 @@ class Example(QWidget):
         t = Twitter(auth=OAuth(access, access_secret, api, api_secret))
         t.statuses.update(status=tweet)
         Notify.init('ShareXin')
-        Sent = Notify.Notification.new('Sent to Twitter')
+        Sent = Notify.Notification.new('Success', tweet)
         Sent.show()
         time.sleep(2)
         Sent.close()

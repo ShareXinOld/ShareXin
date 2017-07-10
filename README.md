@@ -11,11 +11,12 @@ python3
 [Twitter](https://github.com/sixohsix/twitter)  
 PyQt5  
 gnome-screenshot (on Linux)  
+feh (for Selection)  
 
 #### Features
 * Uploads to Twitter
 * Notification via libnotify
-* Works with Wayland and X11
+* Works with Wayland (On Gnome only) and X11 (On everything since the 90s)
 * Compatible with Pyinstaller
 
 #### Installation
@@ -26,6 +27,11 @@ gnome-screenshot (on Linux)
 5. Done!
 
 ### Changelog
+#### [0.7.4] - 2017-07-10
+#### Added
+- Better notification
+- Selection pauses the screen by taking a screenshot of it and displaying it
+
 #### [0.7.3] - 2016-10-08
 #### Added
 - Better configuration, similar to ShareJin's config

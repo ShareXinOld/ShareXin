@@ -30,7 +30,7 @@ class Example(QWidget):
         self.tweetEdit = QtWidgets.QTextEdit()
         cancel = QtWidgets.QPushButton('Cancel')
         tweet = QtWidgets.QPushButton('Tweet')
-        cancel.clicked.connect(QtCore.QCoreApplication.instance().quit)
+        cancel.clicked.connect(self.no)
         tweet.clicked.connect(self.tweet)
 
         grid = QtWidgets.QGridLayout()
@@ -55,11 +55,18 @@ class Example(QWidget):
         id_img1 = t_up.media.upload(media=imagedata)["media_id_string"]
         t.statuses.update(status=tweet, media_ids=",".join([id_img1]))
         Notify.init('ShareXin')
-        Sent = Notify.Notification.new('Success', 'Sent to Twitter', '/tmp/sharexin_img.png')
+        Sent = Notify.Notification.new('Success', tweet, '/tmp/sharexin_img.png')
         Sent.show()
         time.sleep(2)
         Sent.close()
-        
+    def no(self):
+        self.close()
+        Notify.init('ShareXin')
+        Sent = Notify.Notification.new('File saved')
+        Sent.show()
+        time.sleep(1)
+        Sent.close()
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = Example()
